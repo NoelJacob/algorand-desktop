@@ -1,24 +1,32 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@fontsource/jetbrains-mono': ^4.5.11
   '@sveltejs/adapter-static': next
   '@sveltejs/kit': next
   '@tauri-apps/api': ^1.1.0
   '@tauri-apps/cli': ^1.1.1
   '@thencc/algonautjs': ^0.1.58
+  multiformats: ^10.0.2
+  sanitize.css: ^13.0.0
   svelte: ^3.52.0
   svelte-check: ^2.9.2
   svelte-preprocess: ^4.10.7
+  tauri-plugin-store-api: github:tauri-apps/tauri-plugin-store#dev
   typescript: ^4.8.4
   vite: ^3.2.1
 
 dependencies:
+  '@fontsource/jetbrains-mono': 4.5.11
   '@tauri-apps/api': 1.1.0
   '@thencc/algonautjs': 0.1.58
+  multiformats: 10.0.2
+  sanitize.css: 13.0.0
+  tauri-plugin-store-api: github.com/tauri-apps/tauri-plugin-store/9bd993aa67766596638bbfd91e79a1bf8f632014
 
 devDependencies:
-  '@sveltejs/adapter-static': 1.0.0-next.46
-  '@sveltejs/kit': 1.0.0-next.528_svelte@3.52.0+vite@3.2.1
+  '@sveltejs/adapter-static': 1.0.0-next.47
+  '@sveltejs/kit': 1.0.0-next.529_svelte@3.52.0+vite@3.2.1
   '@tauri-apps/cli': 1.1.1
   svelte: 3.52.0
   svelte-check: 2.9.2_svelte@3.52.0
@@ -45,6 +53,10 @@ packages:
     requiresBuild: true
     dev: true
     optional: true
+
+  /@fontsource/jetbrains-mono/4.5.11:
+    resolution: {integrity: sha512-IW1qgWGkjlN1O6Jf+6LWF9DpcdXhyQEXhTlzfVKrWHX+ProuOT5FcrEAj34AR+19CgAb9Sheda2slORnybBsdw==}
+    dev: false
 
   /@jridgewell/resolve-uri/3.1.0:
     resolution: {integrity: sha512-F2msla3tad+Mfht5cJq7LSXcdudKTWCVYUgw6pLFOOHSTtZlj6SWNYAp+AhuqLmWdBO2X5hPrLcu8cVP8fy28w==}
@@ -104,12 +116,12 @@ packages:
     resolution: {integrity: sha512-a5Sab1C4/icpTZVzZc5Ghpz88yQtGOyNqYXcZgOssB2uuAr+wF/MvN6bgtW32q7HHrvBki+BsZ0OuNv6EV3K9g==}
     dev: true
 
-  /@sveltejs/adapter-static/1.0.0-next.46:
-    resolution: {integrity: sha512-8BlgwD3fjAbtUUgvREjrq5okZSXMTU/Qla99RhTqGaFo+uOrUzguKrXvjeaD4GzxQZdQUNyTX9hKT0V7tX6TMw==}
+  /@sveltejs/adapter-static/1.0.0-next.47:
+    resolution: {integrity: sha512-pYY9/FhJAIWB3BXnLoKXj5yMZjQjtD9ZsW8UOqKE51H5sbCNHu+wdBlh2CkW20ww4yhfYrlvLWioxij6DPRO9w==}
     dev: true
 
-  /@sveltejs/kit/1.0.0-next.528_svelte@3.52.0+vite@3.2.1:
-    resolution: {integrity: sha512-zUtXzWU4+EgT9cw5s7laPM6jgLQatGui+pCxUyQzEpMwDAOeNWduYl4bEFCRyfQTSNzQK+nnpkR+e5X+TO8BHA==}
+  /@sveltejs/kit/1.0.0-next.529_svelte@3.52.0+vite@3.2.1:
+    resolution: {integrity: sha512-wM9Y38m8GVNT2YDQo41XNNa55OwTiGE+4fEuuhQnQY4nOSihXGllPsdIulnVsrxcSw9jKLkzwJdFr+i2y2y+OQ==}
     engines: {node: '>=16.14'}
     hasBin: true
     requiresBuild: true
@@ -1264,6 +1276,11 @@ packages:
   /ms/2.1.2:
     resolution: {integrity: sha512-sGkPx+VjMtmA6MX27oA4FBFELFCZZ4S4XqeGOXCv68tT+jb3vk/RyaKWP0PTKyWtmLSM0b+adUTEvbs1PEaH2w==}
 
+  /multiformats/10.0.2:
+    resolution: {integrity: sha512-nJEHLFOYhO4L+aNApHhCnWqa31FyqAHv9Q77AhmwU3KsM2f1j7tuJpCk5ByZ33smzycNCpSG5klNIejIyfFx2A==}
+    engines: {node: '>=16.0.0', npm: '>=7.0.0'}
+    dev: false
+
   /nanoid/3.3.4:
     resolution: {integrity: sha512-MqBkQh/OHTS2egovRtLk45wEyNXwF+cokD+1YPf9u5VfJiRdAiRwB2froX5Co9Rh20xs4siNPm8naNotSD6RBw==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -1476,6 +1493,10 @@ packages:
       mkdirp: 0.5.6
       rimraf: 2.7.1
     dev: true
+
+  /sanitize.css/13.0.0:
+    resolution: {integrity: sha512-ZRwKbh/eQ6w9vmTjkuG0Ioi3HBwPFce0O+v//ve+aOq1oeCy7jMV2qzzAlpsNuqpqCBjjriM1lbtZbF/Q8jVyA==}
+    dev: false
 
   /semver/7.3.8:
     resolution: {integrity: sha512-NB1ctGL5rlHrPJtFDVIVzTyQylMLu9N9VICA6HSFJo8MCGVTMW6gfpicwKmmK/dAjTOrqu5l63JJOpDSrAis3A==}
@@ -1842,4 +1863,13 @@ packages:
       which-module: 2.0.0
       y18n: 4.0.3
       yargs-parser: 13.1.2
+    dev: false
+
+  github.com/tauri-apps/tauri-plugin-store/9bd993aa67766596638bbfd91e79a1bf8f632014:
+    resolution: {tarball: https://codeload.github.com/tauri-apps/tauri-plugin-store/tar.gz/9bd993aa67766596638bbfd91e79a1bf8f632014}
+    name: tauri-plugin-store-api
+    version: 0.1.0
+    dependencies:
+      '@tauri-apps/api': 1.1.0
+      tslib: 2.4.0
     dev: false

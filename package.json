@@ -12,8 +12,12 @@
     "tauri": "tauri"
   },
   "dependencies": {
+    "@fontsource/jetbrains-mono": "^4.5.11",
     "@tauri-apps/api": "^1.1.0",
-    "@thencc/algonautjs": "^0.1.58"
+    "@thencc/algonautjs": "^0.1.58",
+    "multiformats": "^10.0.2",
+    "sanitize.css": "^13.0.0",
+    "tauri-plugin-store-api": "github:tauri-apps/tauri-plugin-store#dev"
   },
   "devDependencies": {
     "@sveltejs/adapter-static": "next",
