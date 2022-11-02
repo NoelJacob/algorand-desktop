@@ -5,6 +5,9 @@ It uses a standard SvelteKit source folder for the UI but contains backend in sr
 
 Finally, Tauri's app design aligns with Algorand's green ideals. [Every byte saved is a leaf on a tree that gets to grow](https://tauri.app/blog/2022/06/19/tauri-1-0#environment). 
 
+![image](https://user-images.githubusercontent.com/54862022/199580542-65b0878b-c018-45ad-8777-da40cdf89a88.png)
+
+
 # How To Run Dev
 
 ```
