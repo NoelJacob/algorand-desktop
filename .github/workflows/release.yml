@@ -1,4 +1,4 @@
-name: "publish"
+name: "Release"
 on:
   push:
     branches:
@@ -13,33 +13,40 @@ jobs:
 
     runs-on: ${{ matrix.platform }}
     steps:
-    - uses: actions/checkout@v2
-    - name: Setup pnpm
-      uses: pnpm/action-setup@v2.2.4
-      with:
-        version: latest
-    - name: setup node
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16
-        cache: pnpm
-    - name: install Rust stable
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: nightly
-    - name: install dependencies (ubuntu only)
-      if: matrix.platform == 'ubuntu-20.04'
-      run: |
-        sudo apt-get update
-        sudo apt-get install -y libgtk-3-dev webkit2gtk-4.0 libappindicator3-dev librsvg2-dev patchelf
-    - name: install app dependencies and build it
-      run: pnpm install --frozen-lockfile && pnpm build
-    - uses: tauri-apps/tauri-action@v0
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      with:
-        tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
-        releaseName: "App v__VERSION__"
-        releaseBody: "Check Readme for usage"
-        releaseDraft: false
-        prerelease: false
+      - uses: actions/checkout@v2
+      - name: Setup bun
+        uses: oven-sh/setup-bun@v1
+        with:
+          bun-version: latest
+      - name: Setup node
+        uses: actions/setup-node@v3
+        with:
+          node-version: latest
+      - name: Setup Rust nightly
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: nightly
+      - name: Install Ubuntu dependencies
+        if: matrix.platform == 'ubuntu-20.04'
+        run: |
+          sudo apt update
+          sudo apt install libwebkit2gtk-4.0-dev \
+          build-essential \
+          curl \
+          wget \
+          file \
+          libssl-dev \
+          libgtk-3-dev \
+          libayatana-appindicator3-dev \
+          librsvg2-dev
+      - name: Install dependencies and Build
+        run: bun install --frozen-lockfile && bun run build
+      - uses: tauri-apps/tauri-action@v0
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        with:
+          tagName: app-v__VERSION__ # the action automatically replaces \_\_VERSION\_\_ with the app version
+          releaseName: "App v__VERSION__"
+          releaseBody: "Check Readme for usage"
+          releaseDraft: false
+          prerelease: false
